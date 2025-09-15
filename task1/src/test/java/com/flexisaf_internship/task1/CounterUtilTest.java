@@ -47,13 +47,13 @@ public class CounterUtilTest {
     void testCountWithSet() {
         Set<String> words = new HashSet<>(Arrays.asList("apple", "banana", "pear", "plum"));
         long count = CounterUtil.count(words, w -> w.length() > 4);
-        assertEquals(2, count); // banana, apple
+        assertEquals(2, count);
     }
 
     @Test
     void testCountWithQueue() {
         Queue<Integer> queue = new LinkedList<>(Arrays.asList(10, 20, 25, 30, 35));
         long count = CounterUtil.count(queue, n -> n % 5 == 0);
-        assertEquals(5, count); // all divisible by 5
+        assertEquals(5, count);
     }
 }
