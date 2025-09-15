@@ -1,6 +1,6 @@
 package com.flexisaf_internship.task1;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.function.Predicate;
 
 
@@ -12,7 +12,7 @@ import java.util.function.Predicate;
  */
 public class CounterUtil {
 
-    public static <T> long count(List<T> collection, Predicate<T> condition) {
+    public static <T> long count(Collection<T> collection, Predicate<T> condition) {
         return collection.stream()
                 .filter(condition)
                 .count();
