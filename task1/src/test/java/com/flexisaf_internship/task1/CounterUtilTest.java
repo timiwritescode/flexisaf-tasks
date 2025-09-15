@@ -1,7 +1,9 @@
 package com.flexisaf_internship.task1;
 
 import org.junit.jupiter.api.Test;
-import java.util.List;
+
+import java.util.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CounterUtilTest {
@@ -39,5 +41,19 @@ public class CounterUtilTest {
         List<String> words = List.of("apple", "apricot", "avocado");
         long count = CounterUtil.count(words, w -> w.startsWith("a"));
         assertEquals(3, count);
+    }
+
+    @Test
+    void testCountWithSet() {
+        Set<String> words = new HashSet<>(Arrays.asList("apple", "banana", "pear", "plum"));
+        long count = CounterUtil.count(words, w -> w.length() > 4);
+        assertEquals(2, count); // banana, apple
+    }
+
+    @Test
+    void testCountWithQueue() {
+        Queue<Integer> queue = new LinkedList<>(Arrays.asList(10, 20, 25, 30, 35));
+        long count = CounterUtil.count(queue, n -> n % 5 == 0);
+        assertEquals(5, count); // all divisible by 5
     }
 }
