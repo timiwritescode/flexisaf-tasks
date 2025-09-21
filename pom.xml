@@ -13,7 +13,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
   <modules>
-    <module>task1</module>
+    <module>java_collections</module>
   </modules>
   <dependencyManagement>
     <dependencies>
